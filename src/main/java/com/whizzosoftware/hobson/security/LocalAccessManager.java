@@ -185,7 +185,7 @@ public class LocalAccessManager implements AccessManager {
 
     @Override
     public void authorize(HobsonUser user, String action, String resource) {
-        System.out.println("authorize(" + user.getId() + "," + action + "," + resource + ")");
+        // NO-OP
     }
 
     @Override
