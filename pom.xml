@@ -51,6 +51,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.1</version>
@@ -162,7 +168,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Import-Package>org.osgi.framework,org.apache.felix.dm,javax.inject.*,org.slf4j,io.netty.*,org.json.*,org.apache.commons.*,org.mapdb.*,org.restlet.*,org.json.*,com.whizzosoftware.hobson.bootstrap.api.*,com.whizzosoftware.hobson.api.*;version="[0.10.0,0.11)</Import-Package>
+                        <Import-Package>org.osgi.framework,org.apache.felix.dm,javax.inject.*,org.slf4j,org.apache.commons.*,org.mapdb.*,org.restlet.*,org.json.*,com.whizzosoftware.hobson.api.*;version="[0.10.0,0.11)</Import-Package>
                         <Bundle-Activator>com.whizzosoftware.hobson.security.Activator</Bundle-Activator>
                         <Embed-Dependency>jose4j;scope=compile|runtime</Embed-Dependency>
                     </instructions>
@@ -220,4 +226,7 @@
             <url>https://api.bintray.com/maven/whizzosoftware/maven/hobson-hub-auth</url>
         </repository>
     </distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>
