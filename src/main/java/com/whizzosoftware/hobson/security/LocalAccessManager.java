@@ -61,7 +61,13 @@ public class LocalAccessManager implements AccessManager {
     private OIDCConfig oidcConfig;
     private JwtConsumer jwtConsumer;
 
-    public LocalAccessManager() {
+    public LocalAccessManager() {}
+
+    public LocalAccessManager(File f) {
+        setFile(f);
+    }
+
+    public void start() {
         File f = new File(System.getProperty(ConfigurationManager.HOBSON_HOME, "."), "data");
         if (!f.exists()) {
             if (!f.mkdir()) {
@@ -109,10 +115,6 @@ public class LocalAccessManager implements AccessManager {
         } else {
             logger.error("No executor manager available to perform user store housekeeping");
         }
-    }
-
-    public LocalAccessManager(File f) {
-        setFile(f);
     }
 
     @Override

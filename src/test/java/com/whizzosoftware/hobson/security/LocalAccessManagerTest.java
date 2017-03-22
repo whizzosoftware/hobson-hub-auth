@@ -85,7 +85,7 @@ public class LocalAccessManagerTest {
     public void testAuthenticate() throws Exception {
         File f = File.createTempFile("users", "db");
         f.deleteOnExit();
-        LocalAccessManager mgr = new LocalAccessManager();
+        LocalAccessManager mgr = new LocalAccessManager(f);
         HobsonUser user = mgr.authenticate("admin", "password");
         assertNotNull(user);
 
